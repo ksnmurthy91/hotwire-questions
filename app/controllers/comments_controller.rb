@@ -23,7 +23,6 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    debugger
     @comment = @commentable.comments.new(comment_params)
 
     respond_to do |format|
