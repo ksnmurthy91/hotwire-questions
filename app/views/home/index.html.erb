@@ -1,1 +1,32 @@
-<h1> Latest Questions in Hotwire </h1>
+<h1> Latest Questions in Hotwire posted by others</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Description</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.description %></td>
+      <td><%= question.user_id %></td>
+      <td><%= link_to 'Show', question %></td>
+      <% if current_user == question.user %>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+## render page links in the view:
+<%= will_paginate @questions %>
+
+<%= link_to 'New Question', new_question_path %>

@@ -25,7 +25,7 @@ gem 'devise'
 gem 'devise-bootstrapped'
 gem 'hotwire-rails'
 gem 'dotenv-rails'
-
+gem 'will_paginate'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
